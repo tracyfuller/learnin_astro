@@ -1,14 +1,15 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About Me";
 
 const identity = {
-  firstName: "Tracy",
-  country: "USA",
-  occupation: "Professional learner",
-  hobbies: ["learning", "doing tutorials", "dad jokes"],
+	firstName: "Tracy",
+	country: "USA",
+	occupation: "Professional learner",
+	hobbies: ["learning", "doing tutorials", "dad jokes"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
@@ -30,7 +31,7 @@ const mediumBgColor = "#fbd6a2";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-		<style define:vars={{primaryColor, secondaryColor, mediumBgColor}}>
+		<style define:vars={{ primaryColor, secondaryColor, mediumBgColor }}>
 			h1 {
 				color: var(--primaryColor);
 				font-style: oblique;
@@ -48,29 +49,49 @@ const mediumBgColor = "#fbd6a2";
 		</style>
 	</head>
 	<body>
-        <Navigation />
+		<Navigation />
 
 		<div class="header-box">
 			<h1>About Me</h1>
 		</div>
-        <h2>... I'm learning Astro and I'm stuck in tutorial hell.</h2>
+		<h2>... I'm learning Astro and I'm stuck in tutorial hell.</h2>
 		<p>Here's some things about me:</p>
 		<ul>
 			<li>My name is {identity.firstName}</li>
-			<li>I live in {identity.country} and I am currently a {identity.occupation}</li>
-			{identity.hobbies.length >= 2 &&
-				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+			<li>
+				I live in {identity.country} and I am currently a {
+					identity.occupation
+				}
+			</li>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+						Two of my hobbies are: {identity.hobbies[0]} and{" "}
+						{identity.hobbies[1]}
+					</li>
+				)
 			}
 		</ul>
 		<p>My skills are:</p>
 		<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		{happy && <p>I am happy to be learning astro</p>}
 
 		{finished && <p>I finished this tutorial! thank god.</p>}
 
-		{goal === 3 ? <p>The tutorial says my goal should be to finish in three days which is way too much.</p> : <p>my goal is not three days, that's ridiculous.</p>}
+		{
+			goal === 3 ? (
+				<p>
+					The tutorial says my goal should be to finish in three days
+					which is way too much.
+				</p>
+			) : (
+				<p>my goal is not three days, that's ridiculous.</p>
+			)
+		}
+
+		<Footer />
 	</body>
 </html>

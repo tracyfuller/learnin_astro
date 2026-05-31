@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+const pageTitle = "Astro says what";
 ---
 
 <html lang="en">
@@ -10,7 +12,7 @@ import Navigation from '../components/Navigation.astro';
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro says what</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<Navigation />
@@ -23,5 +25,6 @@ import Navigation from '../components/Navigation.astro';
             <li><a href="/posts/post-2">Post 2 - The revenge of the markdown</a></li>
             <li><a href="/posts/post-3">Post 3 - A new nope</a></li>
         </ul>
+		<Footer />
 	</body>
 </html>
