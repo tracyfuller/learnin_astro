@@ -13,6 +13,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const primaryColor = "#BC5A2C";
+const secondaryColor = "#61711C";
+const mediumBgColor = "#fbd6a2";
 ---
 
 <html lang="en">
@@ -23,13 +27,31 @@ const goal = 3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<style define:vars={{primaryColor, secondaryColor, mediumBgColor}}>
+			h1 {
+				color: var(--primaryColor);
+				font-style: oblique;
+				font-size: 4rem;
+			}
+			.header-box {
+				background-color: var(--mediumBgColor);
+				text-align: center;
+				border-radius: 4em;
+			}
+			.skill {
+				color: var(--secondaryColor);
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>About Me</h1>
+		<div class="header-box">
+			<h1>About Me</h1>
+		</div>
         <h2>... I'm learning Astro and I'm stuck in tutorial hell.</h2>
 		<p>Here's some things about me:</p>
 		<ul>
@@ -41,7 +63,7 @@ const goal = 3;
 		</ul>
 		<p>My skills are:</p>
 		<ul>
-		{skills.map((skill) => <li>{skill}</li>)}
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
 
 		{happy && <p>I am happy to be learning astro</p>}
