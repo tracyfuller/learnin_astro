@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const pageTitle = "Astro says what";
 ---
 
@@ -16,15 +16,20 @@ const pageTitle = "Astro says what";
 	</head>
 	<body>
 		<Header />
-		
-		<h1>My Learning Blog</h1>
-        <p>This is a blog page. With Blog Stuff</p>
 
-        <ul>
-            <li><a href="/posts/post-1">Post 1 - The cry for help</a></li>
-            <li><a href="/posts/post-2">Post 2 - The revenge of the markdown</a></li>
-            <li><a href="/posts/post-3">Post 3 - A new nope</a></li>
-        </ul>
+		<h1>My Learning Blog</h1>
+		<p>This is a blog page. With Blog Stuff</p>
+
+		<ul>
+			<li><a href="/posts/post-1">Post 1 - The cry for help</a></li>
+			<li>
+				<a href="/posts/post-2">Post 2 - The revenge of the markdown</a>
+			</li>
+			<li><a href="/posts/post-3">Post 3 - A new nope</a></li>
+		</ul>
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
